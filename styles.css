@@ -648,3 +648,19 @@ h1 {
   transform: scale(1.05);
   text-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
 }
+
+.hd {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 25px;
+  color: #FF00FF;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.hd:hover {
+  color: #66ffff; /* lighter cyan on hover */
+  transform: scale(1.05);
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
+}
