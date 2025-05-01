@@ -195,6 +195,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .move-controls {
@@ -264,7 +265,7 @@ h1 {
 
 .game-btn {
   padding: 12px 24px;
-  margin: 8px 0;
+  margin: 10px 0;
   border: none;
   background-color: var(--primary-color);
   color: var(--text-color);
@@ -274,6 +275,22 @@ h1 {
   transition: all 0.2s;
   min-width: 100%;
   letter-spacing: 0.5px;
+  margin-top: 5px;
+}
+
+.game-btn2 {
+  padding: 12px 24px;
+  margin: 10px 0;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 100%;
+  letter-spacing: 0.5px;
+  margin-top: 20px;
 }
 
 .game-btn:hover:not(:disabled) {
@@ -281,7 +298,17 @@ h1 {
   background-color: #ff33ff;
 }
 
+.game-btn2:hover:not(:disabled) {
+  box-shadow: 0 0 10px var(--primary-color);
+  background-color: #ff33ff;
+}
+
 .game-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.game-btn2:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
