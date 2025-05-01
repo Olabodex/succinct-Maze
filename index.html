@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Succinct Maze - Zero Knowledge Escape Game</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Escape the maze without revealing your path</h1>
+    
+    <div class="game-container">
+      <!-- Game Board Section -->
+      <div class="game-column">
+        <div class="game-header">
+          <div class="path-label">
+            <span class="start-label">START</span> → <span class="exit-label">EXIT</span>
+          </div>
+          <div class="moves-count" id="move-counter">Moves: 0</div>
+        </div>
+        
+        <div id="game-board" class="game-board"></div>
+        
+        <!-- Arrow Controls -->
+        <div class="controls">
+          <div class="move-controls">
+            <button id="up-btn" class="move-btn btn-up" disabled>↑</button>
+            <button id="left-btn" class="move-btn btn-left" disabled>←</button>
+            <div class="btn-center"></div>
+            <button id="right-btn" class="move-btn btn-right" disabled>→</button>
+            <button id="down-btn" class="move-btn btn-down" disabled>↓</button>
+          </div>
+        </div>
+        <a href="https://x.com/olabode_x" target="_blank" class="signature-link">Made by Olabode_x</a>
+
+      </div>
+      
+      <!-- Status Panel Section -->
+      <div class="status-panel">
+        <h2 class="status-title">Maze Status</h2>
+        
+        <div class="status-section">
+          <h3 class="section-title">Your Progress</h3>
+          <div class="info-boxes">
+            <div class="info-box">
+              <div class="info-box-title">Position</div>
+              <div class="info-box-value" id="position-display">X: 0, Y: 0</div>
+            </div>
+            <div class="info-box">
+              <div class="info-box-title">Status</div>
+              <div class="info-box-value status-value" id="status-display">Navigating</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="verification-section">
+          <h3 class="verification-title">Verification</h3>
+          <div id="verification-prompt">Ready to prove you've found the exit?</div>
+          <button id="verify-btn" class="verification-btn" disabled>Prove Escape</button>
+          <div class="verification-help">Verify your escape without revealing your path</div>
+          <div id="verification-status" class="verification-msg"></div>
+        </div>
+        
+        <div class="how-it-works">
+          <h3>How It Works</h3>
+          <p>This game uses Succinct's SP1 zkVM to verify you've solved the maze without revealing your solution path.</p>
+          <p>The proof confirms you followed valid paths from start to exit, but keeps your exact route private.</p>
+        </div>
+        
+        <div class="game-buttons">
+          <button id="start-game" class="game-btn">Start Game</button>
+          <button id="reset-game" class="game-btn" disabled>Reset Game</button>
+          <button id="reset-verify-btn" class="game-btn" disabled>Reset Verification</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Game Info Modal -->
+  <div id="info-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2 class="modal-title">How to Play zkMaze</h2>
+      <div class="modal-body">
+        <p>Navigate through the maze from the start (green) to the exit (cyan) using the arrow keys or on-screen controls.</p>
+        <p>Once you reach the exit, generate a zero-knowledge proof that verifies your completion without revealing your actual path.</p>
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-color start"></div>
+            <span>Start</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color exit"></div>
+            <span>Exit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="maze.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
